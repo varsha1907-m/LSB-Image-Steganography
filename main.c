@@ -37,8 +37,8 @@ int main(int argc, char *argv[])
         if (argc != 4 && argc != 5)
             return 1;
 
-        printf("\n========== LSB IMAGE STEGNOGRAPHY ==========\n");
-        printf("\n--------------- ENCODING COMPLETE -------------------\n\n");
+        printf("\n========== LSB IMAGE STEGNOGRAPHY ====================\n");
+        printf("\n--------------- ENCODING -----------------------------\n\n");
 
         encInfo.src_image_fname = argv[2];
         encInfo.secret_fname = argv[3];
@@ -50,6 +50,8 @@ int main(int argc, char *argv[])
 
         if (do_encoding(&encInfo) != e_success)
             return 1;
+
+        printf("\n--------------- ENCODING COMPLETE -------------------\n\n");
     }
     else if (operation == e_decode)
     {
@@ -63,11 +65,13 @@ int main(int argc, char *argv[])
         if (argc == 4)
             decInfo.requested_output_fname = argv[3];
 
-        printf("\n========== LSB IMAGE STEGNOGRAPHY ==========\n");
-        printf("\n--------------- DECODING COMPLETE -------------------\n\n");
+        printf("\n========== LSB IMAGE STEGNOGRAPHY =====================\n");
+        printf("\n--------------- DECODING ------------------------------\n\n");
 
         if (do_decoding(&decInfo) != e_success)
             return 1;
+
+        printf("\n--------------- DECODING COMPLETE -------------------\n\n");
     }
     else
     {
